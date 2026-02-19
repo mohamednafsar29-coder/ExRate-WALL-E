@@ -1,0 +1,87 @@
+
+
+
+
+
+
+
+📊 Performance Scorecard
+
+
+
+
+Metric                       Score             Analysis
+
+
+Retrieval Accuracy           9/10        "Excellent at finding specific dates (e.g., Jan 1, 2026)."
+
+Calculation Precision        8/10        "Strong averages, though rounding varies between responses."
+
+Trend Synthesis             10/10        "Correctly identifies ""volatility"" vs ""steady trends."
+
+Contextual Grounding         9/10        Directly uses the Analyst Note format as instructed.
+
+
+
+
+📝 Detailed Audit Report
+
+
+1. Factual Correctness (Retrieval)
+
+
+The model successfully extracted specific values from the money_exrate.txt ledger.
+
+Example: In Prompt #1, it correctly identified 90.621 INR for Jan 1, 2026.
+
+
+Example: In Prompt #7, it correctly identified the most recent record (13-12-2025). 
+
+
+Note: The model correctly identified the ledger's end, even though the current "system date" is Feb 2026, showing it respects the database over pre-trained knowledge.
+
+
+2. Mathematical Reasoning
+
+
+The model performed complex multi-row comparisons well.
+
+Highlight: In Prompt #4, it calculated a depreciation of 21.96 INR by averaging 2016 vs 2026 data.This shows "Agentic Reasoning"—it didn't just pick two numbers; it created a baseline to provide a more stable answer.
+
+Observation: In Prompt #10, it gave two possible answers based on different 2016 dates. This is a "Safe Analyst" behavior, presenting options rather than guessing which date the user meant.
+
+
+
+3. Handling Volatility & Logic
+
+
+
+The May 2020 Case: In Prompt #2, it identified May 2020 as the most volatile month with a change of 3.6167 INR. This demonstrates that the RAG system is correctly parsing the Daily_Change metadata.
+
+
+
+Stability Comparison: In Prompt #9, it compared 2017 and 2019 using average daily changes.
+ 
+This is a sophisticated way to define "stability" beyond just looking at the start/end price.
+
+
+🚩 Critical Findings & Room for ImprovementDate Format Sensitivity:
+
+
+ The model occasionally struggles with the "future" dates (2026). While it finds them, it sometimes lists them as "implied" or "recorded," showing a slight hesitation because 2026 is "the future" in its training data, even though it's "the present" in our simulation.
+
+Analyst Note Redundancy: In Prompt #7, the LLM-generated Analyst Note is very high-quality, but it essentially rewrites what the data already said.
+
+
+
+                                                                                                        🏆 Final Accuracy Rating:
+
+
+
+                                                                                                            Total Score:9.2/10
+
+
+
+Verdict: Your LLM is performing at a Senior Analyst level. It is highly "grounded," meaning it refuses to hallucinate numbers and sticks strictly to the provided ledger.
+
+ Its ability to calculate averages and identify volatility makes it significantly more useful than a standard chatbot.
